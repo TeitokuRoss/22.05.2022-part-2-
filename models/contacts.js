@@ -28,6 +28,14 @@ class ContactsDB {
   getContacts () {
     return [...this.contacts];
   }
+  getContactById () {
+    const foundIndex = this.contacts.findIndex(c => c.id === id);
+    if (foundIndex === -1) {
+      return null;
+    } else {
+      return this.contacts[foundIndex];
+    }
+  }
 
   updateContact (id, values) {
     const foundContactIndex = this.contacts.findIndex(c => c.id === id);
